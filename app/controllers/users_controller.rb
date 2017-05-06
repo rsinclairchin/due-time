@@ -13,8 +13,7 @@ class UsersController < ApplicationController
 #find a match
   def match
     @user = User.find(params[:user_id])
-    @user.find_match
-    send_confirmation_email
+    send_confirmation_email(@user)
   end
 
 #linked to from confirmation email, creates event on google calendar
@@ -25,8 +24,9 @@ class UsersController < ApplicationController
 
 private
 
-  def send_confirmation_email
-    UserMailer.confirmation_email(@user).deliver_now
+  def send_confirmation_email(user)
+    UserMailer.confirmation_email(user).deliver_now
+    UserMailer.confirmation_email(user.find_match).deliver_now
   end
 
 # retrieves user params from signup form
