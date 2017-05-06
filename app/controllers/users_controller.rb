@@ -14,7 +14,7 @@ private
 
 # retrieves user params from signup form
   def user_params
-    params.permit(:name)
+    params.permit(:name, :email, :availability, :hunter, :seeker)
   end
 
 end
