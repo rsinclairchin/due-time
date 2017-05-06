@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+skip_before_filter :verify_authenticity_token
 #creates a new user
   def create
     User.create(user_params)
