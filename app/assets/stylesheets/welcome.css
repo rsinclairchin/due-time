@@ -1,5 +1,26 @@
 body {
     /*background-image: url("dew.jpg");*/
-    background-color: #66bb84;
+    /*background-color: #66bb84;
+    background: -webkit-linear-gradient(#a8c8b9,#fff);*/
     /*background-repeat: no-repeat;*/
+}
+#header{
+	background: none;
+}
+#footer{
+	background: none;
+	height: 0px;
+
+}
+.logo{
+	background-image: url("/assets/images/logo.png");
+}
+html{
+	background-color: #66bb84;
+    background: -webkit-linear-gradient(#a8c8b9,#a8c8b9);
+    background-repeat: no-repeat;
+    height: 1500px;
+}
+.container{
+	box-shadow: 10px 10px 10px 0;
 }
