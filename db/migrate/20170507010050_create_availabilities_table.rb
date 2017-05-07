@@ -1,6 +1,6 @@
 class CreateAvailabilitiesTable < ActiveRecord::Migration[5.0]
   def change
-    create_table :availabilities_tables do |t|
+    create_table :availabilities do |t|
       t.boolean :mon_am
       t.boolean :tues_am
       t.boolean :wed_am

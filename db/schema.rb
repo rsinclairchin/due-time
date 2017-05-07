@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170507010050) do
+ActiveRecord::Schema.define(version: 20170507011506) do
 
-  create_table "availabilities_tables", force: :cascade do |t|
+  create_table "availabilities", force: :cascade do |t|
     t.boolean "mon_am"
     t.boolean "tues_am"
     t.boolean "wed_am"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20170507010050) do
     t.boolean "wed_pm"
     t.boolean "thurs_pm"
     t.boolean "fri_pm"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_availabilities_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

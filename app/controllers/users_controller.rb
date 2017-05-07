@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 skip_before_filter :verify_authenticity_token
+
 #creates a new user
   def create
-    User.create(user_params)
+    @user = User.create(user_params)
+    @user.availability = Availability.create(availability_params)
   end
 
 #find a match
@@ -26,7 +28,11 @@ private
 
 # retrieves user params from signup form
   def user_params
-    params.permit(:name, :email, :hunter, :seeker,:tues_am, :mon_am, :wed_am, :thurs_am, :fri_am,:mom_pm, :tues_pm, :wed_pm, :thurs_pm,:fri_pm )
+    params.permit(:name, :email, :hunter, :seeker)
+  end
+
+  def availability_params
+    params.permit(:tues_am, :mon_am, :wed_am, :thurs_am, :fri_am,:mom_pm, :tues_pm, :wed_pm, :thurs_pm, :fri_pm)
   end
 
 end

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  # attr_accessible :name, :email, :match
+  attr_accessor(:availability)
+  has_one :availability
 
   def find_match
     User.where(availability: availability, hunter: !hunter, seeker: !seeker)
