@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506210201) do
+ActiveRecord::Schema.define(version: 20170507010050) do
+
+  create_table "availabilities_tables", force: :cascade do |t|
+    t.boolean "mon_am"
+    t.boolean "tues_am"
+    t.boolean "wed_am"
+    t.boolean "thurs_am"
+    t.boolean "fri_am"
+    t.boolean "mon_pm"
+    t.boolean "tues_pm"
+    t.boolean "wed_pm"
+    t.boolean "thurs_pm"
+    t.boolean "fri_pm"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string  "name"
