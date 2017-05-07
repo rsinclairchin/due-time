@@ -4,7 +4,7 @@ skip_before_filter :verify_authenticity_token
 #creates a new user
   def create
     @user = User.create(user_params)
-    @user.availability = Availability.create(availability_params)
+    @user.availability = Availability.create(availability_params.merge({user_id: @user.id}))
     send_confirmation_email
   end
 

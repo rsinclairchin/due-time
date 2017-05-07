@@ -3,26 +3,26 @@ class User < ActiveRecord::Base
   has_one :availability
 
   def find_match
-    if mon_am_match
-      return mon_am_match
+    if mon_am_match && self.availability.mon_am
+      return User.find(mon_am_match.first.user_id)
     elsif tues_am_match
-      return tues_am_match
+      return User.find(tues_am_match.first.user_id)
     elsif wed_am_match
-      return wed_am_match
+      return User.find(wed_am_match.first.user_id)
     elsif thurs_am_match
-      return thurs_am_match
+      return User.find(thurs_am_match.first.user_id)
     elsif fri_am_match
-      return fri_am_match
+      return User.find(fri_am_match.first.user_id)
     elsif mon_pm_match
-      return mon_pm_match
+      return User.find(mon_pm_match.first.user_id)
     elsif tues_pm_match
-      return tues_pm_match
+      return User.find(tues_pm_match.first.user_id)
     elsif wed_pm_match
-      return wed_pm_match
+      return User.find(wed_pm_match.first.user_id)
     elsif thurs_pm_match
-      return thurs_pm_match
+      return User.find(thurs_pm_match.first.user_id)
     elsif fri_pm_match
-      return fri_pm_match
+      return User.find(fri_pm_match.first.user_id)
     end
   end
 
