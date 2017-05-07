@@ -6,6 +6,7 @@ skip_before_filter :verify_authenticity_token
     @user = User.create(user_params)
     @user.availability = Availability.create(availability_params.merge({user_id: @user.id}))
     send_confirmation_email
+    render "matched"
   end
 
 #linked to from confirmation email, creates event on google calendar
